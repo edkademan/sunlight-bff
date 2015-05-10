@@ -38,7 +38,7 @@ def list_legislators(options):
 		elif l["terms"][-1]["type"] == "rep":
 			reps.append(l["name"]["official_full"])
 
-	if hasattr(options, "champber"):
+        if options.get("chamber", False):
 		if options["chamber"] == "senate":
 			print "SENATORS:"
 			for sen in sens:

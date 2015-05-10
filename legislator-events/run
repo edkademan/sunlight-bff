@@ -39,10 +39,8 @@ logging.basicConfig(format='%(message)s', level=log_level.upper())
 
 # depends on tasks/[task_name].py being present relative to this directory
 sys.path.append("tasks")
-import utils
 
 try:
   __import__(task_name).run(options)
 except Exception as exception:
-  # utils.admin(exception)
   print "something's wrong: %s" % exception
